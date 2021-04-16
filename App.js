@@ -1,32 +1,33 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import curveM from './assets/img/curveM.png'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView} from 'react-native';
+import smolcurveM from './assets/img/smolcurveM.png'
 import Header from './components/Header';
-import Card from './components/Card'
-import goldPremium from './assets/img/goldPremium.png'
+import PCard from './components/PCard'
+import back from './assets/img/back.png'
 
 
 const App = () => {
   return (
-    <View>
+    <ScrollView>
       <View style={styles.topcontainer}>
-        <Image source={curveM} style={styles.img} />
-        <Text style={styles.hi}>Hi Karan!</Text>
-        <Header title="Categories" />
-        <Card title="gaurik milk" subtitle="swad malwa ka" cimg="goldPremium"/>
-        <Card title="gaurik desi ghee" subtitle="SHUDDHATA MAI NO COMPROMISE"/>
-        <Card title="gaurik butter milk" subtitle="refreshing"/>
-      </View>  
-    </View>
+        <Image source={smolcurveM} style={styles.img} />
+        <Image source={back} style={styles.back} />
+        <Header title="Gaurik Milk" />
+        <PCard title="gaurik milk" price="30" cimg="goldPremium"/>
+        <PCard title="toned fresh" price="30"/>
+        <PCard title="standard powder" price="30"/>
+        <PCard title="chai super" price="30"/>
+      </View> 
+      
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
-
-  topcontainer:{
+  topcontainer: {
     paddingLeft: '10%',
     paddingRight: '10%',
-    paddingTop: '19%',
+    paddingTop: '10%',
   },
 
   img: {
@@ -34,13 +35,10 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
   },
 
-  hi: {
-    color: '#1E5D8A',
-    fontSize:20,
-    fontFamily: 'Manrope-Medium',
+  back: {
+    marginBottom: "6%",
   },
 
-  
 });
 
 export default App
